@@ -6,7 +6,7 @@ const { StringEntry } = require('./models');
 const { Sequelize } = require('sequelize');
 const { Op } = require('sequelize');
 const { ServerConfig } = require('./config');
-
+const cors = require("cors");
 const { analyzeString, filterStrings } = require('./utils');
 
 const { parseNaturalLanguageQuery, buildSequelizeWhere } = require('./utils/parseNaturalLanguage');
