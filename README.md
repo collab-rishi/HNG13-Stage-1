@@ -213,7 +213,7 @@ Responses:
       "properties": { },
       "created_at": "2023-01-01T12:00:00Z"
     },
-    ...
+    
   ],
   "count": 10,
   "filters_applied": {  }
