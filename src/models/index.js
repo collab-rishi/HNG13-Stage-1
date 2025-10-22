@@ -9,6 +9,9 @@ const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
+console.log('Current NODE_ENV:', env);
+console.log('Config for current env:', config);
+
 const db = {};
 
 let sequelize;
@@ -16,6 +19,11 @@ let sequelize;
 if (config.url) {
   // If using a full DATABASE URL (recommended)
   sequelize = new Sequelize(config.url, config);
+  console.log(config.url);
+  sequelize.authenticate()
+  .then(() => console.log('✅ Database connected successfully'))
+  .catch(err => console.error('❌ Unable to connect to database:', err));
+
 } else if (config.use_env_variable) {
   // Optional pattern if url is stored under a different env variable name
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
