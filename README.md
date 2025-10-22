@@ -210,13 +210,13 @@ Responses:
     {
       "id": "<sha256_hash>",
       "value": "example",
-      "properties": { ... },
+      "properties": { },
       "created_at": "2023-01-01T12:00:00Z"
     },
     ...
   ],
   "count": 10,
-  "filters_applied": { ... }
+  "filters_applied": {  }
 }
 ```
 500 Internal Server Error for server errors.
