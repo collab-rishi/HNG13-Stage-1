@@ -11,4 +11,14 @@ module.exports = {
       }
     }
   },
+  production: {
+    url: process.env.MYSQL_URL,
+    dialect: 'mysql',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      }
+    }
+  }
 };
